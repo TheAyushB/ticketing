@@ -22,7 +22,7 @@ public class UserBookingService {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    private static final String USERS_PATH = "app/src/main/java/ticket/booking/localDb/users.json";
+    private static final String USERS_PATH = "app/src/main/java/ticketing/localDb/users.json";
 
     public UserBookingService(User user) throws IOException {
         this.user = user;
