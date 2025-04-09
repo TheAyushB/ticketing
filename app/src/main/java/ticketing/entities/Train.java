@@ -1,9 +1,18 @@
 package ticketing.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+
 import java.sql.Time;
 import java.util.List;
 import java.util.Map;
 
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@JsonPOJOBuilder
 public class Train {
 
     private String trainId;
@@ -15,6 +24,8 @@ public class Train {
     private Map<String, String> stationTimes;
 
     private List<String> stations;
+
+    public Train() {}
 
     public Train(String trainId, String trainNo, List<List<Integer>> seats, Map<String, String> stationTimes, List<String> stations) {
         this.trainId = trainId;
